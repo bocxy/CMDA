@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Codeconvey" />
+    
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+   
+    <title>CMDA</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+
+    
+
+
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="#" style="block-size: auto;">CMDA</a>
+          <a class="navbar-brand brand-logo-mini" href="#"></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Search applications">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+               
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">Settings</p>
+                </div>
+              </a>
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+              </div>
+            </li>
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notifications</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  
+                    <p class="text-gray ellipsis mb-0"> Secretary monthly review </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+
+                    <p class="text-gray ellipsis mb-0">  145 Applications delay </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                   
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+               
+                    <p class="text-gray ellipsis mb-0">  245 CC delay </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+              </div>
+            </li>
+            <li class="nav-item nav-logout d-none d-lg-block">
+              <a class="nav-link" href="#">
+                <i class="mdi mdi-power"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-settings d-none d-lg-block">
+              <a class="nav-link" href="#">
+                <i class="mdi mdi-format-line-spacing"></i>
+              </a>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                  <img src="assets/images/faces/profile.png" alt="profile">
+                  <span class="login-status online"></span>
+                  <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">Mr.Anshul Mishra  </span>
+                  <span class="font-weight-bold mb-2"> I.A.S</span>
+                  <br>
+                  <span class="text-secondary text-small">Member Secretary</span>
+                  <br>
+                  <span class="text-secondary text-small">CMDA</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
+                <span class="menu-title">Applications</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-file menu-icon"></i>
+              </a>
+              <div class="collapse" id="general-pages">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="applications.html"> January</a></li>
+                  <li class="nav-item"> <a class="nav-link" href=""> February </a></li>
+                  <li class="nav-item"> <a class="nav-link" href=""> March </a></li>
+                  <li class="nav-item"> <a class="nav-link" href=""> April </a></li>
+                  <li class="nav-item"> <a class="nav-link" href=""> May</a></li>
+                </ul>
+              </div>
+            </li>
+           
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">  
+      <!-- Analytics -->
+        <div class="timeline-parcours">
+          <div class="container-info">
+            <h1 style="text-align: center;">GR123's Planning Permission Application</h1>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc1">
+                   <div class="infobox date1">
+                      <h3>Admission</h3>
+                      <p class="subt-infobox">Jan23</p>
+                      <p class="infobox-text"></p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc2">
+                   <div class="infobox date1">
+                      <h3>Inspection</h3>
+                      <p class="subt-infobox">Jan23</p>
+                      <p class="infobox-text">Mr.Muthu</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc3">
+                   <div class="infobox date1">
+                      <h3>Under Scrutiny</h3>
+                      <p class="subt-infobox">Jan28</p>
+                      <p class="infobox-text">Mr.Vishwa</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc4">
+                   <div class="infobox date1">
+                      <h3>Under Process</h3>
+                      <p class="subt-infobox">Feb5</p>
+                      <p class="infobox-text">Mr.Thambi</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+    <div class="container-time-line">
+            <div class="time-line-parcours">
+               <div class="timeline-indicator">
+                  <p class="indicator-val"></p>
+               </div>
+            </div>
+         </div>
+         <div class="container-bulle">
+            <div class="timeline-section-tl">
+               <div class="tl-round round1"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round2"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round3"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round4"></div>
+            </div>
+            </div>
+            </div>
+
+
+             <div class="timeline-section-tl">
+              <div class="parcours-box parc5">
+                 <div class="infobox date1">
+                    <h3>DC Advice</h3>
+                    <p class="subt-infobox">Feb10</p>
+                    <p class="infobox-text">Mr.Shiva</p>
+                 </div>
+                 <div class="fleche-bloc"></div>
+              </div>
+           </div>
+           <div class="timeline-section-tl">
+            <div class="parcours-box parc6">
+               <div class="infobox date1">
+                  <h3>Decision</h3>
+                  <p class="subt-infobox">Feb26</p>
+                  <p class="infobox-text">Mr.Pazhani</p>
+               </div>
+               <div class="fleche-bloc"></div>
+            </div>
+         </div>
+         <div class="timeline-section-tl">
+          <div class="parcours-box parc7">
+             <div class="infobox date1">
+                <h3>Payment</h3>
+                <p class="subt-infobox"></p>
+                <p class="infobox-text">Mr.Arun</p>
+             </div>
+             <div class="fleche-bloc"></div>
+          </div>
+       </div>
+       <div class="timeline-section-tl">
+        <div class="parcours-box parc8">
+           <div class="infobox date1">
+              <h3>Approved Letter</h3>
+              <p class="subt-infobox"></p>
+              <p class="infobox-text">Mr.Thiru</p>
+           </div>
+           <div class="fleche-bloc"></div>
+        </div>
+     </div>
+ 
+          <div class="container-time-line">
+             <div class="time-line-parcours">
+                <div class="timeline-indicator">
+                   <p class="indicator-val"></p>
+                </div>
+             </div>
+          </div>
+          <div class="container-bulle">
+             
+             <div class="timeline-section-tl">
+              <div class="tl-round round5"></div>
+           </div>
+           <div class="timeline-section-tl">
+            <div class="tl-round round6"></div>
+         </div>
+         <div class="timeline-section-tl">
+          <div class="tl-round round7"></div>
+       </div>
+       <div class="timeline-section-tl">
+        <div class="tl-round round8"></div>
+     </div>
+        
+
+
+
+         <!-- Analytics -->
+         <div class="timeline-parcours">
+          <div class="container-info">
+            <h1 style="text-align: center;">GR123's Completion Certificate Application</h1>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc11">
+                   <div class="infobox date1">
+                      <h3>Application Received</h3>
+                      <p class="subt-infobox">Jan23</p>
+                      <p class="infobox-text"></p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc12">
+                   <div class="infobox date1">
+                      <h3>Site Visit</h3>
+                      <p class="subt-infobox">Jan23</p>
+                      <p class="infobox-text">Mr.Muthu</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc13">
+                   <div class="infobox date1">
+                      <h3>Site visit Report submitted</h3>
+                      <p class="subt-infobox">Jan28</p>
+                      <p class="infobox-text">Mr.Vishwa</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+             <div class="timeline-section-tl">
+                <div class="parcours-box parc14">
+                   <div class="infobox date1">
+                      <h3>Panner Review</h3>
+                      <p class="subt-infobox">Feb5</p>
+                      <p class="infobox-text">Mr.Thambi</p>
+                   </div>
+                   <div class="fleche-bloc"></div>
+                </div>
+             </div>
+    <div class="container-time-line">
+            <div class="time-line-parcours">
+               <div class="timeline-indicator">
+                  <p class="indicator-val"></p>
+               </div>
+            </div>
+         </div>
+         <div class="container-bulle">
+            <div class="timeline-section-tl">
+               <div class="tl-round round11"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round12"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round13"></div>
+            </div>
+            <div class="timeline-section-tl">
+               <div class="tl-round round14"></div>
+            </div>
+            </div>
+            </div>
+
+
+             <div class="timeline-section-tl">
+              <div class="parcours-box parc15">
+                 <div class="infobox date1">
+                    <h3>Senior Planner review</h3>
+                    <p class="subt-infobox">Feb10</p>
+                    <p class="infobox-text">Mr.Shiva</p>
+                 </div>
+                 <div class="fleche-bloc"></div>
+              </div>
+           </div>
+           <div class="timeline-section-tl">
+            <div class="parcours-box parc16">
+               <div class="infobox date1">
+                  <h3>Chief Planner Review</h3>
+                  <p class="subt-infobox"></p>
+                  <p class="infobox-text">Mr.Pazhani</p>
+               </div>
+               <div class="fleche-bloc"></div>
+            </div>
+         </div>
+         <div class="timeline-section-tl">
+          <div class="parcours-box parc17">
+             <div class="infobox date1">
+                <h3>Decision</h3>
+                <p class="subt-infobox"></p>
+                <p class="infobox-text">Mr.Arun</p>
+             </div>
+             <div class="fleche-bloc"></div>
+          </div>
+       </div>
+       <div class="timeline-section-tl">
+        <div class="parcours-box parc18">
+           <div class="infobox date1">
+              <h3>Approve/Reject Letter</h3>
+              <p class="subt-infobox"></p>
+              <p class="infobox-text">Mr.Thiru</p>
+           </div>
+           <div class="fleche-bloc"></div>
+        </div>
+     </div>
+ 
+          <div class="container-time-line">
+             <div class="time-line-parcours">
+                <div class="timeline-indicator">
+                   <p class="indicator-val"></p>
+                </div>
+             </div>
+          </div>
+          <div class="container-bulle">
+             
+             <div class="timeline-section-tl">
+              <div class="tl-round round15"></div>
+           </div>
+           <div class="timeline-section-tl">
+            <div class="tl-round round16"></div>
+         </div>
+         <div class="timeline-section-tl">
+          <div class="tl-round round17"></div>
+       </div>
+       <div class="timeline-section-tl">
+        <div class="tl-round round18"></div>
+     </div>
+        
+ 
+       </div>
+        </div>
+          </div>
+        </div>
+        
+
+          
+
+
+           
+              
+    
+
+     
+          </div>
+                      <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid clearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © BOCXY 2020</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+<script>
+  $( document ).ready(function() {
+   $(".parcours-box").removeClass("parcours-active");
+   
+   
+   $(".round1").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc1").addClass("parcours-active");
+      $(".timeline-indicator").css("width","0");
+   })
+   
+   $(".round2").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc2").addClass("parcours-active");
+      $(".timeline-indicator").css("width","240");
+   })
+   
+   $(".round3").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc3").addClass("parcours-active");
+      $(".timeline-indicator").css("width","480");
+   })
+   
+   $(".round4").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".round4").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc4").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round5").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".round4").css("background-color","green");
+      $(".round5").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc5").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round6").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".round4").css("background-color","green");
+      $(".round5").css("background-color","green");
+      $(".round6").css("background-color","green");
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc6").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round7").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".round4").css("background-color","green");
+      $(".round5").css("background-color","green");
+      $(".round6").css("background-color","green");
+      $(".round7").css("background-color","red");
+
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc7").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round8").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round1").css("background-color","green");
+      $(".round2").css("background-color","green");
+      $(".round3").css("background-color","green");
+      $(".round4").css("background-color","green");
+      $(".round5").css("background-color","green");
+      $(".round6").css("background-color","green");
+      $(".round7").css("background-color","red");
+      $(".round8").css("background-color","red");
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc8").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+   
+});
+</script>
+
+<script>
+  $( document ).ready(function() {
+   $(".parcours-box").removeClass("parcours-active");
+   
+   
+   $(".round11").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc11").addClass("parcours-active");
+      $(".timeline-indicator").css("width","0");
+   })
+   
+   $(".round12").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc12").addClass("parcours-active");
+      $(".timeline-indicator").css("width","240");
+   })
+   
+   $(".round13").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc13").addClass("parcours-active");
+      $(".timeline-indicator").css("width","480");
+   })
+   
+   $(".round14").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".round14").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc14").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round15").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".round14").css("background-color","green");
+      $(".round15").css("background-color","green");
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc15").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round16").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".round14").css("background-color","green");
+      $(".round15").css("background-color","green");
+      $(".round16").css("background-color","red");
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc16").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round17").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".round14").css("background-color","green");
+      $(".round15").css("background-color","green");
+      $(".round16").css("background-color","red");
+      $(".round17").css("background-color","red");
+
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc17").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+
+   $(".round18").on("click",function(){
+      $(".tl-round").css("background-color","rgb(85, 69, 69)");
+      $(".round11").css("background-color","green");
+      $(".round12").css("background-color","green");
+      $(".round13").css("background-color","green");
+      $(".round14").css("background-color","green");
+      $(".round15").css("background-color","green");
+      $(".round16").css("background-color","red");
+      $(".round17").css("background-color","red");
+      $(".round18").css("background-color","red");
+
+      $(".parcours-active").removeClass("parcours-active");
+      $(".parc18").addClass("parcours-active");
+      $(".timeline-indicator").css("width","720");
+   })
+   
+});
+</script>
+
+<script>
+
+  function reste_a_faire()
+  {
+     return true;
+  }
+
+  if(reste_a_faire())
+     console.log('rien n\'est fait');
+
+</script>
+
+
+
+        
+  </body>
+</html>
